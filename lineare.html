@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lineare Funktionen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-link" href="index.html">Funktionen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Funktionen verstehen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lineare.html">Lineare Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quadratische.html">Quadratische Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">Teste dein Wissen</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center my-5">
+    <h1 class="display-4">Lineare Funktionen</h1>
+    <p class="lead text-muted">Grundlagen</p>
+  </header>
+
+  <main class="container my-5">
+    <!-- Definition der linearen Funktion -->
+    <section class="mb-5">
+      <h2>Definition</h2>
+      <p>Eine lineare Funktion hat die allgemeine Form <strong>y = m * x + b</strong>, wobei:</p>
+      <ul>
+        <li><strong>m</strong> die Steigung der Funktion ist und angibt, wie stark y pro Einheit x zunimmt oder abnimmt.
+        </li>
+        <li><strong>b</strong> den y-Achsenabschnitt bezeichnet, also den Punkt, an dem die Funktion die y-Achse
+          schneidet.</li>
+      </ul>
+    </section>
+
+    <!-- Platz für Bilder -->
+    <section class="text-center mb-5">
+      <h2>Steigung und y-Achsenabschnitt</h2>
+      <p>Im folgenden Bild wird die Bedeutung von <strong>b</strong> (y-Achsenabschnitt) veranschaulicht:</p>
+      <img src="images/y-Achsenabschnitt b.png" alt="Steigung und Bedeutung von b" class="img-fluid"
+        style="max-width: 80%; height: auto;">
+    </section>
+
+    <section class="text-center mb-5">
+      <h2>Veränderung der Steigung</h2>
+      <p>Im folgenden Bild wird die Bedeutung von <strong>m</strong> (Steigung) veranschaulicht:</p>
+      <img src="images/Steigung m.png" alt="Veränderung der Steigung m" class="img-fluid"
+        style="max-width: 80%; height: auto;">
+    </section>
+
+    <!-- Berechnung einer linearen Funktion -->
+    <section class="mb-5">
+      <h2>Berechnung einer linearen Funktion</h2>
+      <p>Um eine lineare Funktion zu berechnen, benötigen wir:</p>
+      <ol>
+        <li><strong>Die Steigung (m):</strong> Berechnet als <code>m = (y2 - y1) / (x2 - x1)</code>, also die Änderung
+          von y geteilt durch die Änderung von x.</li>
+        <li><strong>Den y-Achsenabschnitt (b):</strong> Bestimmt durch Einsetzen eines Punktes (x, y) in die Gleichung
+          <code>y = m * x + b</code> und Lösen nach b.
+        </li>
+      </ol>
+      <p><strong>Beispiel:</strong> Gegeben sind die Punkte (2, 3) und (4, 7):</p>
+      <ul>
+        <li>Steigung: <code>m = (7 - 3) / (4 - 2) = 4 / 2 = 2</code></li>
+        <li>y-Achsenabschnitt: Einsetzen von (2, 3): <code>3 = 2 * 2 + b</code> ergibt <code>b = -1</code>.</li>
+        <li>Funktion: <code>y = 2 * x - 1</code></li>
+      </ul>
+    </section>
+
+    <!-- Nullstellenberechnung -->
+    <section class="mb-5">
+      <h2>Nullstellen</h2>
+      <p>Die Nullstelle einer linearen Funktion ist der x-Wert, bei dem y = 0 ist. Um die Nullstelle zu berechnen,
+        setzen wir die Funktion gleich 0 und lösen nach x:</p>
+      <ul>
+        <li><strong>Beispiel:</strong> Gegeben ist die Funktion <code>y = 2 * x - 1</code>.</li>
+        <li>Setzen wir <code>y = 0</code>: <code>0 = 2 * x - 1</code>.</li>
+        <li>Nach x auflösen: <code>x = 1 / 2</code>.</li>
+      </ul>
+      <p>Die Nullstelle liegt also bei <code>x = 0,5</code>.</p>
+    </section>
+
+    <!-- GeoGebra-Integration -->
+    <section class="text-center">
+      <h2>Interaktive Darstellung</h2>
+      <p>Verwende die Schieberegler, um den Wert von <strong>m</strong> und <strong>b</strong> zu verändern und die
+        Auswirkungen auf die Funktion zu beobachten:</p>
+      <div id="geogebra" style="width: 800px; height: 400px; margin: 0 auto;"></div>
+      <script>
+        var applet = new GGBApplet({
+          "appName": "graphing",
+          "width": 800,
+          "height": 400,
+          "showToolbar": false,
+          "showAlgebraInput": false,
+          "showMenuBar": false,
+          "material_id": "tdfyhyhh" // Beispiel-Material-ID
+        }, true);
+        window.addEventListener("load", function () {
+          applet.inject("geogebra");
+        });
+      </script>
+      <i>Bitte gehen Sie in die Mitte des Koordinatensystems um die Funktion sehen zu können.</i>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

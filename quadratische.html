@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadratische Funktionen</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-link" href="index.html">Funktionen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Funktionen verstehen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lineare.html">Lineare Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quadratische.html">Quadratische Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">Teste dein Wissen</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center my-5">
+    <h1 class="display-4">Quadratische Funktionen</h1>
+    <p class="lead text-muted">Parabeln verstehen</p>
+  </header>
+
+  <main class="container my-5">
+    <div class="row">
+      <!-- Card für Normalform -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Normalform</h5>
+            <p class="card-text">Eine quadratische Funktion in Normalform hat die Form: <br>
+              <code>f(x) = ax² + bx + c</code>
+            </p>
+            <p class="card-text">Die Parameter <strong>a</strong>, <strong>b</strong> und <strong>c</strong> bestimmen
+              die Form und Lage des Parabels.</p>
+            <p>Je nachdem, wie die Werte von <strong>a</strong>, <strong>b</strong> und <strong>c</strong> gewählt
+              werden,
+              verändert sich die Parabel. Der Wert von <strong>a</strong> beeinflusst die Öffnung (nach oben oder
+              unten),
+              während <strong>b</strong> und <strong>c</strong> die Verschiebung der Parabel bestimmen.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card für Einfluss von 'a' -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Einfluss von <i>a</i> auf die Öffnung</h5>
+            <p class="card-text">Der Parameter <strong>a</strong> bestimmt, ob die Parabel nach oben oder unten geöffnet
+              ist. <br>
+              Wenn <strong>a</strong> positiv ist, öffnet die Parabel nach oben. Wenn <strong>a</strong> negativ ist,
+              öffnet sie nach unten.</p>
+            <p>Je größer der Betrag von <strong>a</strong>, desto schmaler wird die Parabel. Umgekehrt wird die Parabel
+              breiter, wenn der Betrag von <strong>a</strong> kleiner wird.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card für Scheitelpunktform -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Scheitelpunktform</h5>
+            <p class="card-text">Die Scheitelpunktform lautet: <br>
+              <code>f(x) = a(x - d)² + e</code>
+            </p>
+            <p class="card-text">Hier sind <strong>d</strong> und <strong>e</strong> die Koordinaten des Scheitelpunkts.
+              Diese Form ist nützlich, um den Scheitelpunkt direkt abzulesen.</p>
+            <p>In der Scheitelpunktform ist es einfach, den höchsten oder tiefsten Punkt der Parabel zu finden, der als
+              Scheitelpunkt bezeichnet wird.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center my-5">
+      <h3>Beispiel: Umformen von Normalform in Scheitelpunktform</h3>
+      <p>Gegeben ist die quadratische Funktion: <code>f(x) = 2x² - 8x + 6</code></p>
+      <p>Um sie in die Scheitelpunktform zu bringen, müssen wir zuerst die quadratische Ergänzung durchführen.</p>
+      <pre>f(x) = 2(x² - 4x) + 6</pre>
+      <pre>f(x) = 2((x - 2)² - 4) + 6</pre>
+      <pre>f(x) = 2(x - 2)² - 8 + 6</pre>
+      <pre>f(x) = 2(x - 2)² - 2</pre>
+      <p>Die Scheitelpunktform ist also: <code>f(x) = 2(x - 2)² - 2</code>, mit dem Scheitelpunkt bei (2, -2).</p>
+    </div>
+
+    <!-- GeoGebra-Integration -->
+    <section class="text-center">
+      <h2>Interaktive Darstellung</h2>
+      <p>Verwende die Schieberegler, um den Wert von <strong>m</strong> und <strong>b</strong> zu verändern und die
+        Auswirkungen auf die Funktion zu beobachten:</p>
+      <div id="geogebra" style="width: 800px; height: 400px; margin: 0 auto;"></div>
+      <script>
+        var applet = new GGBApplet({
+          "appName": "graphing",
+          "width": 800,
+          "height": 400,
+          "showToolbar": false,
+          "showAlgebraInput": false,
+          "showMenuBar": false,
+          "material_id": "ezsyefyd" // Beispiel-Material-ID
+        }, true);
+        window.addEventListener("load", function () {
+          applet.inject("geogebra");
+        });
+      </script>
+      <i>Bitte gehen Sie in die Mitte des Koordinatensystems um die Funktion sehen zu können.</i>
+    </section>
+
+    <div class="my-5">
+      <h3>Reales Beispiel: Werfen eines Balls</h3>
+      <p>Ein Ball wird mit einer bestimmten Geschwindigkeit geworfen, und seine Höhe wird durch eine quadratische
+        Funktion beschrieben. Wenn wir die Funktion haben:</p>
+      <p><code>h(t) = -5t² + 20t + 1</code></p>
+      <p>Mit dieser Funktion können wir die Höhe des Balls in Abhängigkeit von der Zeit berechnen und herausfinden, wann
+        der Ball den höchsten Punkt erreicht (Scheitelpunkt). Das hilft bei der Berechnung von Dingen wie der maximalen
+        Höhe und der Flugzeit.</p>
+      <p>Die Funktion zeigt ein typisches Beispiel für eine Parabel, bei der der Ball nach oben geworfen wird, dann
+        seinen höchsten Punkt erreicht und wieder herunterfällt.</p>
+    </div>
+
+    <div class="my-5">
+      <h3>Weitere Anwendungen quadratischer Funktionen</h3>
+      <p>Quadratische Funktionen finden nicht nur Anwendung in der Physik (z.B. bei der Berechnung von Wurfbewegungen),
+        sondern auch in der Wirtschaft, bei der Modellierung von Kostenfunktionen oder in der Technik bei der Analyse
+        von Spannungen in Materialien.</p>
+      <p>Ein weiteres Beispiel ist die Modellierung von Wachstumsprozessen, wo quadratische Funktionen als Annäherung
+        für
+        bestimmte Wachstumsraten dienen können.</p>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

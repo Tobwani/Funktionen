@@ -1,0 +1,23 @@
+nav {
+  background-color: #1E88E5;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+.test:link {
+  color: rgb(17, 99, 207);
+}
+
+.test:hover {
+  color: rgb(68, 125, 199);
+}
+
+.nav-link:link {
+  color: white;
+}
+
+.nav-link:visited {
+  color: white;
+}

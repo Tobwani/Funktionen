@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz: Lineare und Quadratische Funktionen</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .quiz-container {
+      margin-top: 50px;
+    }
+
+    .quiz-card {
+      margin-bottom: 20px;
+    }
+
+    .result {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand nav-link" href="index.html">Funktionen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Funktionen verstehen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lineare.html">Lineare Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quadratische.html">Quadratische Funktionen</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html">Teste dein Wissen</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container quiz-container">
+    <h1 class="text-center mb-4">Quiz: Lineare und Quadratische Funktionen</h1>
+    <form id="quizForm">
+      <!-- Frage 1 -->
+      <div class="card quiz-card">
+        <div class="card-body">
+          <h5 class="card-title">1. Was ist die Steigung der linearen Funktion <code>y = 3x + 2</code> ?</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="q1a" value="0">
+            <label class="form-check-label" for="q1a">0</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="q1b" value="3">
+            <label class="form-check-label" for="q1b">3</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question1" id="q1c" value="2">
+            <label class="form-check-label" for="q1c">2</label>
+          </div>
+        </div>
+      </div>
+      <!-- Frage 2 -->
+      <div class="card quiz-card">
+        <div class="card-body">
+          <h5 class="card-title">2. Welche der folgenden Funktionen ist eine quadratische Funktion?</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="q2a" value="y=2x+1">
+            <label class="form-check-label" for="q2a"><code>y = 2x + 1</code></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="q2b" value="y=x^2+3">
+            <label class="form-check-label" for="q2b"><code>y = x^2 + 3</code></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question2" id="q2c" value="y=4x-5">
+            <label class="form-check-label" for="q2c"><code>y = 4x - 5</code></label>
+          </div>
+        </div>
+      </div>
+      <!-- Frage 3 -->
+      <div class="card quiz-card">
+        <div class="card-body">
+          <h5 class="card-title">3. Wie lautet die Scheitelpunktform der Funktion <code>y = x^2 - 6x + 5</code> ?</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="q3a" value="y=(x-3)^2-4">
+            <label class="form-check-label" for="q3a"><code>y = (x - 3)^2 - 4</code></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="q3b" value="y=(x+3)^2+4">
+            <label class="form-check-label" for="q3b"><code>y = (x + 3)^2 + 4</code></label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="question3" id="q3c" value="y=(x-3)^2+4">
+            <label class="form-check-label" for="q3c"><code>y = (x - 3)^2 + 4</code></label>
+          </div>
+        </div>
+      </div>
+      <!-- Abschicken Button -->
+      <div class="text-center">
+        <button type="button" class="btn btn-primary" onclick="submitQuiz()">Quiz abschicken</button>
+      </div>
+    </form>
+    <!-- Ergebnisanzeige -->
+    <div id="result" class="result mt-4 text-center">
+      <h2>Dein Ergebnis:</h2>
+      <p id="score"></p>
+      <div id="detailedFeedback" class="mt-3"></div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Antworten-Array
+    const correctAnswers = {
+      question1: "3",
+      question2: "y=x^2+3",
+      question3: "y=(x-3)^2-4"
+    };
+
+    function submitQuiz() {
+      const form = document.forms["quizForm"];
+      let score = 0;
+      let totalQuestions = Object.keys(correctAnswers).length;
+      let feedback = "";
+
+      // Punkte berechnen und Feedback generieren
+      for (let question in correctAnswers) {
+        const userAnswer = form[question].value;
+        if (userAnswer === correctAnswers[question]) {
+          score++;
+          feedback += `<p><strong>Frage ${question.slice(-1)}:</strong> Richtig! <code>${userAnswer}</code></p>`;
+        } else {
+          feedback += `<p><strong>Frage ${question.slice(-1)}:</strong> Falsch! Deine Antwort: <code>${userAnswer || "Keine Antwort"}</code>, Korrekt: <code>${correctAnswers[question]}</code></p>`;
+        }
+      }
+
+      // Ergebnis anzeigen
+      document.getElementById("result").style.display = "block";
+      document.getElementById("score").innerText = `Du hast ${score} von ${totalQuestions} Fragen richtig beantwortet.`;
+      document.getElementById("detailedFeedback").innerHTML = feedback;
+    }
+  </script>
+</body>
+
+</html>
